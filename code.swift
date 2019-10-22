@@ -54,26 +54,22 @@ class PeriodicTableViewController: UIViewController {
     }
     
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
-    @IBAction func chooseRandomElement(_ sender: Any){
-        let ranElem = elementsContoller.elements.randomElement()
+    @IBAction func chooseRandomElement(_ sender: Any) { // added a space between ) and {
+        let randomElement = elementsContoller.elements.randomElement() // changed randElem to randomElement
         
-        var chosenElementView:ElementView!
+        var chosenElementView: ElementView! // added a space between : and E
         
-        for e in elementViews {
-            if (e.element == ranElem) {
-                chosenElementView = e
-                break;
+        for element in elementViews { // changed e to element
+            if (element.element == ranElem) { // changed e to element
+                chosenElementView = element // changed e to element
+                // deleted break;
             }
         }
+        //reduced amount of spaces
+        chosenElementView.isHighlighted = true // deleted extra space between = and true
         
-        
-        
-        
-        chosenElementView.isHighlighted =  true
-        
-        delegate?.periodicTableViewController(self,
-                                        didSelectElement: ranElem)
-        }
+        delegate?.periodicTableViewController(self, didSelectElement: ranElem) // brought this onto one line
+     } // backspaced bracket to line up with others
     // No more new additions after this point
 }
 
